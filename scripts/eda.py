@@ -9,6 +9,7 @@ df_snic = pd.read_excel(os.path.join(directorio, '..', 'data', 'snic-departament
 codigos_defunciones = ['X60', 'X61', 'X62', 'X63', 'X64', 'X65', 'X66', 'X67', 'X68', 'X69', 'X70', 'X71', 'X72', 'X73', 'X74', 'X75', 'X76', 'X78', 'X79', 'X80', 'X81', 'X82', 'X83', 'X84']
 df_codigos_defunciones = pd.read_excel(os.path.join(directorio, '..', 'data', 'descdef1.xlsx'), sheet_name="CODMUER")
 df_codigos_provincias = pd.read_excel(os.path.join(directorio, '..', 'data', 'descdef1.xlsx'), sheet_name="PROVRES")
+df_codigos_sexo = pd.read_excel(os.path.join(directorio, '..', 'data', 'descdef1.xlsx'), sheet_name="SEXO")
 
 df_2005 = pd.read_csv(os.path.join(directorio, '..', 'data', 'datos_sobre_defunciones_2005.csv'), encoding='latin1').query("CAUSA in @codigos_defunciones")
 df_2006 = pd.read_csv(os.path.join(directorio, '..', 'data', 'datos_sobre_defunciones_2006.csv'), encoding='latin1').query("CAUSA in @codigos_defunciones")
@@ -42,6 +43,11 @@ df_deis = pd.concat(lista_df05_24, ignore_index=True).drop(columns="MAT").query(
 
 df_deis = pd.merge(left=df_deis, right=df_codigos_defunciones, how="inner", left_on="CAUSA", right_on="CODIGO").rename(columns={'VALOR': 'CAUSA_DESC'}).drop(columns="CODIGO")
 df_deis = pd.merge(left=df_deis, right=df_codigos_provincias, how="inner", left_on="PROVRES", right_on="CODIGO").rename(columns={'VALOR': 'PROVINCIA'}).drop(columns="CODIGO")
+df_deis = pd.merge(left=df_deis, right=df_codigos_sexo, how="left", left_on="SEXO", right_on="CODIGO").rename(columns={'VALOR': 'SEXO'}).drop(columns="CODIGO")
+
+df_deis['GRUPEDAD'] = df_deis['GRUPEDAD'].str[3:]
+df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligido intencionalmente ', '')
+df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligida intencionalmente ', '')
 
 print(df_deis)
 
