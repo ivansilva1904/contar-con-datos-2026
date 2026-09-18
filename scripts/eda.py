@@ -43,12 +43,24 @@ df_deis = pd.concat(lista_df05_24, ignore_index=True).drop(columns="MAT").query(
 
 df_deis = pd.merge(left=df_deis, right=df_codigos_defunciones, how="inner", left_on="CAUSA", right_on="CODIGO").rename(columns={'VALOR': 'CAUSA_DESC'}).drop(columns="CODIGO")
 df_deis = pd.merge(left=df_deis, right=df_codigos_provincias, how="inner", left_on="PROVRES", right_on="CODIGO").rename(columns={'VALOR': 'PROVINCIA'}).drop(columns="CODIGO")
-df_deis = pd.merge(left=df_deis, right=df_codigos_sexo, how="left", left_on="SEXO", right_on="CODIGO").rename(columns={'VALOR': 'SEXO'}).drop(columns="CODIGO")
+df_deis = pd.merge(left=df_deis, right=df_codigos_sexo, how="left", left_on="SEXO", right_on="CODIGO").rename(columns={'VALOR': 'SEXO_DESC'}).drop(columns="CODIGO")
 
-df_deis['GRUPEDAD'] = df_deis['GRUPEDAD'].str[3:]
+
+df_deis['GRUPEDAD_COD'] = df_deis['GRUPEDAD'].str[:2] #con esto guardo el codigo del grupo etario en una nueva columna
+df_deis['GRUPEDAD'] = df_deis['GRUPEDAD'].str[3:] #con esto lo borro de la columna original
+
+df_deis['GRUPEDAD'] = df_deis['GRUPEDAD'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+
 df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligido intencionalmente ', '')
 df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligida intencionalmente ', '')
 
+
+
+print(df_deis.iloc[df_deis.query('SEXO == 3').index]) #fila con un mal codigo de sexo
+print("----")
+print(df_deis[['GRUPEDAD_COD', 'GRUPEDAD']].drop_duplicates().sort_values('GRUPEDAD_COD'))
+#print(df_deis.groupby(['GRUPEDAD_COD', 'GRUPEDAD']).size().reset_index(name='cantidad').sort_values('GRUPEDAD_COD'))
+print("----")
 print(df_deis)
 
 
