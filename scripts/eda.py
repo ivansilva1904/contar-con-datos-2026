@@ -46,18 +46,43 @@ df_deis = pd.merge(left=df_deis, right=df_codigos_provincias, how="inner", left_
 df_deis = pd.merge(left=df_deis, right=df_codigos_sexo, how="left", left_on="SEXO", right_on="CODIGO").rename(columns={'VALOR': 'SEXO_DESC'}).drop(columns="CODIGO")
 
 
-df_deis['GRUPEDAD_COD'] = df_deis['GRUPEDAD'].str[:2] #con esto guardo el codigo del grupo etario en una nueva columna
+#df_deis['GRUPEDAD_COD'] = df_deis['GRUPEDAD'].str[:2] #con esto guardo el codigo del grupo etario en una nueva columna
 df_deis['GRUPEDAD'] = df_deis['GRUPEDAD'].str[3:] #con esto lo borro de la columna original
 
 df_deis['GRUPEDAD'] = df_deis['GRUPEDAD'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+
+#grupos etarios
+grupedad_cod = {
+    "1 a 9": 1,
+    "10 a 14": 2,
+    "15 a 19": 3,
+    "20 a 24": 4,
+    "25 a 29": 5,
+    "30 a 34": 6,
+    "35 a 39": 7,
+    "40 a 44": 8,
+    "45 a 49": 9,
+    "50 a 54": 10,
+    "55 a 59": 11,
+    "60 a 64": 12,
+    "65 a 69": 13,
+    "70 a 74": 14,
+    "75 a 79": 15,
+    "80 a 84": 16,
+    "80 y mas": 17,
+    "85 y mas": 18,
+    "Sin especificar": 19,
+}
+
+df_deis['GRUPEDAD_COD'] = df_deis['GRUPEDAD'].map(grupedad_cod)
 
 df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligido intencionalmente ', '')
 df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligida intencionalmente ', '')
 
 
-
 print(df_deis.iloc[df_deis.query('SEXO == 3').index]) #fila con un mal codigo de sexo
 print("----")
+#print(df_deis.groupby('GRUPEDAD')['GRUPEDAD'].count())
 print(df_deis[['GRUPEDAD_COD', 'GRUPEDAD']].drop_duplicates().sort_values('GRUPEDAD_COD'))
 #print(df_deis.groupby(['GRUPEDAD_COD', 'GRUPEDAD']).size().reset_index(name='cantidad').sort_values('GRUPEDAD_COD'))
 print("----")
