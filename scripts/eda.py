@@ -39,7 +39,7 @@ años = range(2005, 2025, 1)
 for df, año in zip(lista_df05_24, años):
     df.insert(0, 'AÑO', año)
 
-df_deis = pd.concat(lista_df05_24, ignore_index=True).drop(columns="MAT").query("PROVRES not in [98, 99]")
+df_deis = pd.concat(lista_df05_24, ignore_index=True).drop(columns="MAT").query("PROVRES != 98")
 
 df_deis = pd.merge(left=df_deis, right=df_codigos_defunciones, how="inner", left_on="CAUSA", right_on="CODIGO").rename(columns={'VALOR': 'CAUSA_DESC'}).drop(columns="CODIGO")
 df_deis = pd.merge(left=df_deis, right=df_codigos_provincias, how="inner", left_on="PROVRES", right_on="CODIGO").rename(columns={'VALOR': 'PROVINCIA'}).drop(columns="CODIGO")
@@ -79,8 +79,10 @@ df_deis['GRUPEDAD_COD'] = df_deis['GRUPEDAD'].map(grupedad_cod)
 df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligido intencionalmente ', '')
 df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligida intencionalmente ', '')
 
+#df_deis.loc()
 
-print(df_deis.iloc[df_deis.query('SEXO == 3').index]) #fila con un mal codigo de sexo
+df_deis.loc[df_deis.query('SEXO == 3').index, 'SEXO_DESC'] = "Desconocido" #fila con un mal codigo de sexo
+print(df_deis.iloc[df_deis.query('SEXO == 3').index])
 print("----")
 #print(df_deis.groupby('GRUPEDAD')['GRUPEDAD'].count())
 print(df_deis[['GRUPEDAD_COD', 'GRUPEDAD']].drop_duplicates().sort_values('GRUPEDAD_COD'))
