@@ -4,8 +4,6 @@ import pandas as pd
 
 directorio = os.path.dirname(os.path.abspath(__file__))
 
-df_snic = pd.read_excel(os.path.join(directorio, '..', 'data', 'snic-departamentos-anual.xlsx'))
-
 codigos_defunciones = ['X60', 'X61', 'X62', 'X63', 'X64', 'X65', 'X66', 'X67', 'X68', 'X69', 'X70', 'X71', 'X72', 'X73', 'X74', 'X75', 'X76', 'X78', 'X79', 'X80', 'X81', 'X82', 'X83', 'X84']
 df_codigos_defunciones = pd.read_excel(os.path.join(directorio, '..', 'data', 'descdef1.xlsx'), sheet_name="CODMUER")
 df_codigos_provincias = pd.read_excel(os.path.join(directorio, '..', 'data', 'descdef1.xlsx'), sheet_name="PROVRES")
@@ -95,11 +93,3 @@ print(df_deis.describe())
 df_deis.to_excel(os.path.join(directorio, '..', 'data', 'deis_tabla.xlsx'), index=False)
 print("Archivo deis_tabla.xlsx guardado correctamente en carpeta data")
 
-#columnas_innecesarias = ['provincia_id', 'departamento_id', 'cantidad_victimas_masc', 'cantidad_victimas_fem', 'cantidad_victimas_sd', 'tasa_hechos', 'tasa_victimas', 'tasa_victimas_fem', 'tasa_victimas_masc']
-#df_snic = df_snic.drop(columns=columnas_innecesarias)
-#df_snic = df_snic.query('codigo_delito_snic_id == "31"')
-
-
-#df_snic.to_excel(os.path.join(directorio, '..', 'data', 'tabla_robos.xlsx'), index=False)
-#print(df_snic.info())
-#print(df_snic.describe())
