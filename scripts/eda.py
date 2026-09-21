@@ -79,9 +79,8 @@ df_deis['GRUPEDAD_COD'] = df_deis['GRUPEDAD'].map(grupedad_cod)
 df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligido intencionalmente ', '')
 df_deis['CAUSA_DESC'] = df_deis['CAUSA_DESC'].str.replace('autoinfligida intencionalmente ', '')
 
-#df_deis.loc()
-
 df_deis.loc[df_deis.query('SEXO == 3').index, 'SEXO_DESC'] = "Desconocido" #fila con un mal codigo de sexo
+
 print(df_deis.iloc[df_deis.query('SEXO == 3').index])
 print("----")
 #print(df_deis.groupby('GRUPEDAD')['GRUPEDAD'].count())
@@ -89,7 +88,12 @@ print(df_deis[['GRUPEDAD_COD', 'GRUPEDAD']].drop_duplicates().sort_values('GRUPE
 #print(df_deis.groupby(['GRUPEDAD_COD', 'GRUPEDAD']).size().reset_index(name='cantidad').sort_values('GRUPEDAD_COD'))
 print("----")
 print(df_deis)
+print("-------")
+print(df_deis.info())
+print(df_deis.describe())
 
+df_deis.to_excel(os.path.join(directorio, '..', 'data', 'deis_tabla.xlsx'), index=False)
+print("Archivo deis_tabla.xlsx guardado correctamente en carpeta data")
 
 #columnas_innecesarias = ['provincia_id', 'departamento_id', 'cantidad_victimas_masc', 'cantidad_victimas_fem', 'cantidad_victimas_sd', 'tasa_hechos', 'tasa_victimas', 'tasa_victimas_fem', 'tasa_victimas_masc']
 #df_snic = df_snic.drop(columns=columnas_innecesarias)
