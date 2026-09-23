@@ -16,7 +16,7 @@ df_snic = df_snic.query('codigo_delito_snic_id == "31"')
 #Estos son dos registros con el departamento NaN. Los borro porque las victimas son 0 en ambos
 df_snic = df_snic.query('departamento_nombre.isna() == False')
 
-columnas_innecesarias = ['codigo_delito_snic_id', 'codigo_delito_snic_nombre', 'provincia_id', 'departamento_id', 'cantidad_hechos', 'tasa_hechos', 'tasa_victimas', 'tasa_victimas_fem', 'tasa_victimas_masc']
+columnas_innecesarias = ['codigo_delito_snic_id', 'codigo_delito_snic_nombre', 'provincia_id', 'cantidad_hechos', 'tasa_hechos', 'tasa_victimas', 'tasa_victimas_fem', 'tasa_victimas_masc']
 df_snic = df_snic.drop(columns=columnas_innecesarias)
 
 print(df_snic.info())
