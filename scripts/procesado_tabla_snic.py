@@ -24,6 +24,11 @@ print("-----------")
 print(df_snic.describe())
 print("-------")
 print(df_snic)
+
+
+df_snic.to_excel(os.path.join(directorio, '..', 'data', 'snic_tabla.xlsx'), index=False)
+print("Archivo snic_tabla.xlsx guardado correctamente en carpeta data")
+
 #with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'display.width', 1000):
-#    print(df_snic.reset_index())
+#    print(df_snic)
 
