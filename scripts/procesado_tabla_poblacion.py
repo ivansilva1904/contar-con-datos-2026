@@ -37,3 +37,6 @@ print(df_poblacion.describe())
 print("---")
 print(df_poblacion)
 
+df_poblacion.to_excel(os.path.join(directorio, '..', 'data', 'poblacion_estimaciones_tabla.xlsx'), index=False)
+print("Archivo guardado correctamente en carpeta data")
+
