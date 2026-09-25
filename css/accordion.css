@@ -1,0 +1,108 @@
+/* Contenedor general de la lista de acordeones */
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+/* Tarjeta individual del acordeón */
+.accordion-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-surface);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accordion-item:hover {
+  border-color: var(--color-accent);
+}
+
+.accordion-item.open {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botón disparador del acordeón */
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.15rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1rem;
+}
+
+/* Texto del mito */
+.accordion-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.myth-tag {
+  background-color: var(--color-warning-surface);
+  color: var(--color-warning-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.myth-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+/* Ícono indicador de despliegue */
+.accordion-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-muted);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.accordion-item.open .accordion-icon {
+  transform: rotate(180deg);
+  color: var(--color-primary);
+}
+
+/* Contenedor del contenido colapsable */
+.accordion-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+/* Cuerpo de la explicación y realidad */
+.accordion-body {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  border-top: 1px dashed var(--color-border);
+  padding-top: 1rem;
+}
+
+.fact-badge {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.accordion-body p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
