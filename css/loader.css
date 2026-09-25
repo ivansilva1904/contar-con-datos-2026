@@ -1,0 +1,100 @@
+/* Contenedor del skeleton superpuesto sobre el iframe */
+.skeleton-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Estado oculto una vez que el iframe finaliza la carga */
+.skeleton-overlay.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Animación de brillo (shimmer) que simula la carga activa */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #E2E8F0 25%,
+    #F1F5F9 37%,
+    #E2E8F0 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite ease-in-out;
+  border-radius: var(--radius-sm);
+}
+
+/* Maquetación del esqueleto imitando la vista previa de un dashboard */
+.skeleton-header {
+  height: 48px;
+  width: 40%;
+}
+
+.skeleton-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  height: 70px;
+}
+
+.skeleton-charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Mensaje y spinner informativo en el centro del esqueleto */
+.skeleton-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.skeleton-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skeleton-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  font-weight: 600;
+  margin: 0;
+}

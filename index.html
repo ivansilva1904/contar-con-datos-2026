@@ -1,97 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Análisis de Datos: Prevención del Suicidio en Argentina</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análisis de Datos: Prevención del Suicidio en Argentina</title>
 
-  <!-- Hojas de estilo modulares -->
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-</head>
-<body>
-
-  <!-- Cintillo permanente de líneas de atención al suicida -->
-  <div class="lifeline-banner">
-    <div class="lifeline-inner">
-      <p>Centro de Asistencia al Suicida: <strong>135</strong> o <strong>(011) 5275-1135</strong> | Línea Nacional de Salud Mental: <strong>0800-999-0091</strong> (24 hs, gratis)</p>
-      <a href="tel:08009990091" class="lifeline-action">Pedir orientación</a>
-    </div>
-  </div>
-
-  <!-- Barra de navegación fija con enlaces ancla a secciones -->
-  <header class="top-nav">
-    <div class="nav-inner">
-      <div class="nav-brand">Datos & Prevención</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#contexto">Contexto</a></li>
-          <li><a href="#dashboard">Dashboard Interactivo</a></li>
-          <li><a href="#metodologia">Metodología</a></li>
-          <li><a href="#recursos">Recursos de Apoyo</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Contenedor principal de la página -->
-  <main class="main-wrapper">
-    <article class="report-card">
-      <header>
-        <h1>Mortalidad por Suicidio en Argentina: Estadísticas y Prevención</h1>
-        <p>Un abordaje analítico con datos públicos para visibilizar la problemática de la salud mental y promover acciones comunitarias oportunas.</p>
-      </header>
-
-      <!-- Sección 1: Contexto e introducción -->
-      <section id="contexto">
-        <h2 class="section-title">Contexto Nacional</h2>
-        <p>
-          El suicidio es un problema de salud pública prioritario y prevenible. A través de este informe se analizan las tasas estandarizadas, la distribución geográfica por provincias y los grupos etarios más expuestos, utilizando como fuente los datos de la Dirección de Estadísticas e Información de Salud (DEIS) del Ministerio de Salud de la Nación.
-        </p>
-      </section>
-
-      <!-- Sección 2: Dashboard interactivo de Power BI / Tableau -->
-      <section id="dashboard">
-        <h2 class="section-title">Panel Interactivo de Visualización</h2>
-        <p>Explora a continuación las variables temporales y geográficas mediante el panel interactivo.</p>
-        
-        <div class="iframe-container">
-          <!-- URL embebida provista por el analista de datos -->
-          <iframe 
-            title="Dashboard_Suicidios_Argentina"
-            src="about:blank" 
-            allowFullScreen="true">
-          </iframe>
+    <!-- Hojas de estilo modulares -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/accordion.css" />
+  </head>
+  <body>
+    <!-- Modal de advertencia de contenido sensible (Trigger Warning) -->
+    <div
+      class="modal-overlay"
+      id="warning-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-heading"
+    >
+      <div class="modal-card">
+        <div class="modal-header">
+          <span class="modal-badge">Aviso Importante</span>
+          <h2 class="modal-title" id="modal-heading">Contenido Sensible</h2>
         </div>
-      </section>
 
-      <!-- Sección 3: Metodología y origen de los datos -->
-      <section id="metodologia">
-        <h2 class="section-title">Fuentes y Metodología</h2>
+        <div class="modal-body">
+          <p>
+            Este informe contiene análisis estadísticos, gráficos y datos sobre
+            <strong>mortalidad por suicidio en Argentina</strong> con fines
+            estrictamente educativos, preventivos y de divulgación en salud
+            pública.
+          </p>
+          <p>
+            Si estás atravesando una situación emocional difícil, sintiendo
+            angustia o requieres contención inmediata, te recomendamos priorizar
+            tu bienestar y comunicarte con las líneas gratuitas de ayuda antes
+            de continuar.
+          </p>
+
+          <div class="modal-help-box">
+            <p>
+              Atención gratuita 24 hs:<br />
+              <strong>Línea Nacional 0800-999-0091</strong> |
+              <strong>Centro de Asistencia al Suicida: 135</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-exit" id="btn-quick-exit">
+            Salir a un sitio seguro
+          </button>
+          <button type="button" class="btn-continue" id="btn-continue-reading">
+            Entendido y continuar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cintillo permanente de líneas de atención al suicida -->
+    <div class="lifeline-banner">
+      <div class="lifeline-inner">
         <p>
-          Los registros corresponden a las defunciones registradas bajo los códigos CIE-10 (X60-X84). El procesamiento y limpieza de datos fue realizado en Python y modelado para visualización en Power BI.
+          Centro de Asistencia al Suicida: <strong>135</strong> o
+          <strong>(011) 5275-1135</strong> | Línea Nacional de Salud Mental:
+          <strong>0800-999-0091</strong> (24 hs, gratis)
         </p>
-      </section>
+        <a href="tel:08009990091" class="lifeline-action">Pedir orientación</a>
+      </div>
+    </div>
 
-      <!-- Sección 4: Canales de contención y ayuda -->
-      <section id="recursos">
-        <h2 class="section-title">Canales de Contención y Ayuda</h2>
-        <p>
-          Si tú, un familiar o alguien cercano está pasando por una situación de crisis emocional o requiere acompañamiento profesional, los siguientes servicios brindan atención confidencial y gratuita:
-        </p>
-        <ul>
-          <li><strong>Línea 135:</strong> Centro de Asistencia al Suicida (CABA y Gran Buenos Aires).</li>
-          <li><strong>(011) 5275-1135:</strong> Centro de Asistencia al Suicida (disponible para todo el país).</li>
-          <li><strong>0800-999-0091:</strong> Línea Nacional de Salud Mental y Adicciones (atención 24 hs).</li>
-        </ul>
-      </section>
-    </article>
-  </main>
+    <!-- Barra de navegación fija con enlaces ancla a secciones -->
+    <header class="top-nav">
+      <div class="nav-inner">
+        <div class="nav-brand">Datos & Prevención</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#contexto">Contexto</a></li>
+            <li><a href="#dashboard">Dashboard Interactivo</a></li>
+            <li><a href="#metodologia">Metodología</a></li>
+            <li><a href="#mitos">Mitos y Realidades</a></li>
+            <li><a href="#recursos">Recursos de Apoyo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <!-- Módulos de scripts en JavaScript -->
-  <script src="js/navigation.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <!-- Contenedor principal de la página -->
+    <main class="main-wrapper">
+      <article class="report-card">
+        <header>
+          <h1>
+            Mortalidad por Suicidio en Argentina: Estadísticas y Prevención
+          </h1>
+          <p>
+            Un abordaje analítico con datos públicos para visibilizar la
+            problemática de la salud mental y promover acciones comunitarias
+            oportunas.
+          </p>
+        </header>
+
+        <!-- Sección 1: Contexto e introducción -->
+        <section id="contexto">
+          <h2 class="section-title">Contexto Nacional</h2>
+          <p>
+            El suicidio es un problema de salud pública prioritario y
+            prevenible. A través de este informe se analizan las tasas
+            estandarizadas, la distribución geográfica por provincias y los
+            grupos etarios más expuestos, utilizando como fuente los datos de la
+            Dirección de Estadísticas e Información de Salud (DEIS) del
+            Ministerio de Salud de la Nación.
+          </p>
+        </section>
+
+        <!-- Sección: Mitos y Realidades sobre el Suicidio -->
+        <section id="mitos">
+          <h2 class="section-title">Mitos vs. Realidades</h2>
+          <p>
+            El estigma y la desinformación dificultan la búsqueda temprana de
+            ayuda. Derribar estas falsas creencias permite a la comunidad actuar
+            a tiempo y ofrecer acompañamiento seguro.
+          </p>
+
+          <div class="accordion-list">
+            <!-- Mito 1 -->
+            <div class="accordion-item">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <div class="accordion-title-wrap">
+                  <span class="myth-tag">Mito</span>
+                  <span class="myth-title"
+                    >"El que avisa que se va a suicidar, en realidad no lo
+                    hace."</span
+                  >
+                </div>
+                <svg
+                  class="accordion-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="accordion-collapse">
+                <div class="accordion-body">
+                  <span class="fact-badge">Realidad Preventiva</span>
+                  <p>
+                    La inmensa mayoría de las personas que intentan suicidarse
+                    dan indicios verbales, conductuales o emocionales de su
+                    sufrimiento antes del hecho. Toda manifestación de ideación
+                    o deseo de muerte debe ser tomada con absoluta seriedad y no
+                    subestimarse.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mito 2 -->
+            <div class="accordion-item">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <div class="accordion-title-wrap">
+                  <span class="myth-tag">Mito</span>
+                  <span class="myth-title"
+                    >"Hablar sobre el suicidio con alguien puede incitarlo a
+                    hacerlo."</span
+                  >
+                </div>
+                <svg
+                  class="accordion-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="accordion-collapse">
+                <div class="accordion-body">
+                  <span class="fact-badge">Realidad Preventiva</span>
+                  <p>
+                    Hablar de forma abierta, compasiva y sin emitir juicios
+                    reduce la angustia, rompe el aislamiento y le da a la
+                    persona un espacio seguro para desahogarse. Preguntar
+                    directamente sobre cómo se siente puede abrir la puerta al
+                    inicio de un tratamiento o red de apoyo.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mito 3 -->
+            <div class="accordion-item">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <div class="accordion-title-wrap">
+                  <span class="myth-tag">Mito</span>
+                  <span class="myth-title"
+                    >"El suicidio ocurre sin previo aviso y es imposible de
+                    prevenir."</span
+                  >
+                </div>
+                <svg
+                  class="accordion-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="accordion-collapse">
+                <div class="accordion-body">
+                  <span class="fact-badge">Realidad Preventiva</span>
+                  <p>
+                    El suicidio es prevenible. Si bien suele ser un proceso
+                    complejo y multicausal, existen signos de alarma (cambios
+                    bruscos de conducta, aislamiento repentino, despedidas
+                    atípicas, abandono de proyectos) que permiten intervenir
+                    tempranamente junto a profesionales de la salud.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mito 4 -->
+            <div class="accordion-item">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <div class="accordion-title-wrap">
+                  <span class="myth-tag">Mito</span>
+                  <span class="myth-title"
+                    >"Solo las personas con trastornos mentales graves intentan
+                    suicidarse."</span
+                  >
+                </div>
+                <svg
+                  class="accordion-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="accordion-collapse">
+                <div class="accordion-body">
+                  <span class="fact-badge">Realidad Preventiva</span>
+                  <p>
+                    El comportamiento suicida indica un sufrimiento psíquico y
+                    un dolor emocional insoportable, pero no siempre está ligado
+                    a un diagnóstico psiquiátrico formal. Muchas personas
+                    atraviesan crisis agudas provocadas por pérdidas, estrés
+                    extremo, violencia o problemáticas socioeconómicas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Panel interactivo de Power BI / Tableau -->
+        <section id="dashboard">
+          <h2 class="section-title">Panel Interactivo de Visualización</h2>
+          <p>
+            Explora a continuación las variables temporales y geográficas
+            mediante el panel interactivo.
+          </p>
+
+          <div class="iframe-container">
+            <!-- Esqueleto animado superpuesto -->
+            <div class="skeleton-overlay" id="dashboard-skeleton">
+              <div class="skeleton-shimmer skeleton-header"></div>
+
+              <div class="skeleton-kpis">
+                <div class="skeleton-shimmer"></div>
+                <div class="skeleton-shimmer"></div>
+                <div class="skeleton-shimmer"></div>
+              </div>
+
+              <div class="skeleton-charts">
+                <div class="skeleton-shimmer"></div>
+                <div class="skeleton-shimmer"></div>
+              </div>
+
+              <!-- Indicador central de carga -->
+              <div class="skeleton-message">
+                <div class="skeleton-spinner"></div>
+                <p class="skeleton-text">Cargando panel de Power BI...</p>
+              </div>
+            </div>
+
+            <!-- Iframe que incrustará el informe final -->
+            <iframe
+              id="powerbi-frame"
+              title="Dashboard_Suicidios_Argentina"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYzMyYjAyMjctM2Q4ZC00OGFmLWE0OTEtY2ZjNTdhYjMwODYyIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=5b03e068a86cb0289980](https://app.powerbi.com/view?r=eyJrIjoiYzMyYjAyMjctM2Q4ZC00OGFmLWE0OTEtY2ZjNTdhYjMwODYyIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=5b03e068a86cb0289980)"
+              allowfullscreen="true"
+            >
+            </iframe>
+          </div>
+        </section>
+
+        <!-- Sección 3: Metodología y origen de los datos -->
+        <section id="metodologia">
+          <h2 class="section-title">Fuentes y Metodología</h2>
+          <p>
+            Los registros corresponden a las defunciones registradas bajo los
+            códigos CIE-10 (X60-X84). El procesamiento y limpieza de datos fue
+            realizado en Python y modelado para visualización en Power BI.
+          </p>
+        </section>
+
+        <!-- Sección 4: Canales de contención y ayuda -->
+        <section id="recursos">
+          <h2 class="section-title">Canales de Contención y Ayuda</h2>
+          <p>
+            Si tú, un familiar o alguien cercano está pasando por una situación
+            de crisis emocional o requiere acompañamiento profesional, los
+            siguientes servicios brindan atención confidencial y gratuita:
+          </p>
+          <ul>
+            <li>
+              <strong>Línea 135:</strong> Centro de Asistencia al Suicida (CABA
+              y Gran Buenos Aires).
+            </li>
+            <li>
+              <strong>(011) 5275-1135:</strong> Centro de Asistencia al Suicida
+              (disponible para todo el país).
+            </li>
+            <li>
+              <strong>0800-999-0091:</strong> Línea Nacional de Salud Mental y
+              Adicciones (atención 24 hs).
+            </li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <!-- Módulos de scripts en JavaScript -->
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/loader.js"></script>
+  </body>
 </html>
