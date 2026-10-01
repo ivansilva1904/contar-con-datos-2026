@@ -3,20 +3,21 @@
 
 :root {
   /* Paleta institucional y de concientización en salud */
-  --color-primary: #0F766E;         /* Verde azulado profundo: calma y sobriedad institucional */
+  --color-primary: #0F766E;
   --color-primary-hover: #115E59;
-  --color-accent: #0D9488;          /* Verde azulado brillante para elementos interactivos */
-  --color-warning-surface: #FEF3C7; /* Fondo ámbar suave para advertencias y avisos */
+  --color-accent: #0D9488;
+  --color-warning-surface: #FEF3C7;
   --color-warning-text: #92400E;
 
-  /* Colores neutros y superficies */
-  --color-bg-body: #F8FAFC;         /* Gris casi blanco para descansar la vista */
-  --color-bg-surface: #FFFFFF;      /* Blanco puro para las tarjetas de contenido */
-  --color-text-main: #0F172A;       /* Pizarra oscuro para lectura con alto contraste */
-  --color-text-muted: #475569;      /* Texto secundario para descripciones */
-  --color-border: #E2E8F0;          /* Gris claro para bordes divisorios */
+  /* Colores neutros y superficies (Modo Claro) */
+  --color-bg-body: #F8FAFC;
+  --color-bg-surface: #FFFFFF;
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --color-border: #E2E8F0;
+  --color-nav-bg: rgba(255, 255, 255, 0.95);
 
-  /* Tipografía y tamaños de fuente */
+  /* Tipografía y tamaños */
   --font-family-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -31,4 +32,22 @@
   --radius-lg: 16px;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
+}
+
+/* Modo Oscuro: Aplicado tanto en html como en :root para máxima prioridad */
+:root[data-theme="dark"],
+html[data-theme="dark"] {
+  --color-primary: #14B8A6;
+  --color-primary-hover: #2DD4BF;
+  --color-accent: #2DD4BF;
+  --color-warning-surface: #78350F;
+  --color-warning-text: #FEF3C7;
+
+  --color-bg-body: #0F172A;
+  --color-bg-surface: #1E293B;
+  --color-text-main: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-border: #334155;
+  --color-nav-bg: rgba(30, 41, 59, 0.95);
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
