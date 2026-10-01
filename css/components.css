@@ -47,3 +47,122 @@
   height: 100%;
   border: none;
 }
+
+/* Botón flotante para volver arriba */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 800;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-3px);
+}
+
+/* Estilos para los números copiables */
+.copy-phone {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background-color: #F1F5F9;
+  border: 1px dashed var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.copy-phone:hover {
+  background-color: var(--color-warning-surface);
+  border-color: var(--color-warning-text);
+  color: var(--color-warning-text);
+}
+
+/* Estado al copiar con éxito */
+.copy-phone.copied {
+  background-color: #DCFCE7;
+  border-color: #16A34A;
+  color: #15803D;
+}
+
+.copy-phone.copied::after {
+  content: ' ¡Copiado!';
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Cintillo superior permanente de ayuda en crisis */
+.lifeline-banner {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 0.65rem 1.5rem;
+  font-size: var(--font-size-sm);
+  transition: padding 0.3s ease, font-size 0.3s ease;
+}
+
+.lifeline-inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lifeline-inner p {
+  color: #FFFFFF;
+  margin: 0;
+  transition: font-size 0.3s ease;
+}
+
+.lifeline-action {
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  transition: padding 0.3s ease, font-size 0.3s ease, background-color 0.2s ease;
+}
+
+.lifeline-action:hover {
+  background-color: #F1F5F9;
+}
+
+/* Estado contraído al hacer scroll (Header comprimido) */
+.header-sticky-wrapper.scrolled .lifeline-banner {
+  padding: 0.3rem 1.5rem;
+  font-size: 0.75rem;
+}
+
+.header-sticky-wrapper.scrolled .lifeline-inner p {
+  font-size: 0.75rem;
+}
+
+.header-sticky-wrapper.scrolled .lifeline-action {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+}

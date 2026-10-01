@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Análisis de Datos: Prevención del Suicidio en Argentina</title>
 
+    <!-- Metatags principales -->
+    <meta
+      name="description"
+      content="Informe analítico y estadístico sobre la mortalidad por suicidio en Argentina con datos del Ministerio de Salud. Recursos de prevención y líneas de ayuda 24 hs."
+    />
+    <meta name="theme-color" content="#0F766E" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Precarga de fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Open Graph para redes sociales y WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Análisis de Datos: Prevención del Suicidio en Argentina"
+    />
+    <meta
+      property="og:description"
+      content="Un abordaje analítico con datos públicos para visibilizar la problemática de la salud mental y promover acciones de prevención."
+    />
+    <meta property="og:image" content="assets/preview-share.jpg" />
+    <meta property="og:locale" content="es_AR" />
+
     <!-- Hojas de estilo modulares -->
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/base.css" />
@@ -71,9 +98,7 @@
             <strong>(011) 5275-1135</strong> | Línea Nacional de Salud Mental:
             <strong>0800-999-0091</strong> (24 hs, gratis)
           </p>
-          <a href="#recursos" class="lifeline-action"
-            >Pedir orientación</a
-          >
+          <a href="#recursos" class="lifeline-action">Pedir orientación</a>
         </div>
       </div>
 
@@ -345,7 +370,6 @@
           </p>
         </section>
 
-        <!-- Sección 4: Canales de contención y ayuda -->
         <section id="recursos">
           <h2 class="section-title">Canales de Contención y Ayuda</h2>
           <p>
@@ -355,21 +379,54 @@
           </p>
           <ul>
             <li>
-              <strong>Línea 135:</strong> Centro de Asistencia al Suicida (CABA
-              y Gran Buenos Aires).
+              <strong>Centro de Asistencia al Suicida:</strong>
+              <span class="copy-phone" data-phone="135" title="Clic para copiar"
+                >135</span
+              >
+              (CABA y GBA) o
+              <span
+                class="copy-phone"
+                data-phone="01152751135"
+                title="Clic para copiar"
+                >(011) 5275-1135</span
+              >
+              (todo el país).
             </li>
             <li>
-              <strong>(011) 5275-1135:</strong> Centro de Asistencia al Suicida
-              (disponible para todo el país).
-            </li>
-            <li>
-              <strong>0800-999-0091:</strong> Línea Nacional de Salud Mental y
-              Adicciones (atención 24 hs).
+              <strong>Línea Nacional de Salud Mental:</strong>
+              <span
+                class="copy-phone"
+                data-phone="08009990091"
+                title="Clic para copiar"
+                >0800-999-0091</span
+              >
+              (atención 24 hs).
             </li>
           </ul>
         </section>
       </article>
     </main>
+
+    <!-- Botón volver arriba -->
+    <button
+      type="button"
+      class="scroll-top-btn"
+      id="scroll-top-btn"
+      aria-label="Volver arriba"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
 
     <!-- Módulos de scripts en JavaScript -->
     <script src="js/navigation.js"></script>
