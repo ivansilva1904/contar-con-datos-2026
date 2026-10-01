@@ -1,8 +1,13 @@
-/* Barra de navegación superior fija */
-.top-nav {
+/* Contenedor principal sticky que agrupa cintillo + navegación */
+.header-sticky-wrapper {
   position: sticky;
   top: 0;
-  z-index: 900;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Barra de navegación interna */
+.top-nav {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
