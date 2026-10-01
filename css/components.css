@@ -82,12 +82,12 @@
 
 /* Estilos para los números copiables */
 .copy-phone {
-  cursor: pointer;
+cursor: pointer;
   position: relative;
   display: inline-block;
-  padding: 2px 6px;
+  padding: 2px 8px;
   border-radius: var(--radius-sm);
-  background-color: #F1F5F9;
+  background-color: var(--color-bg-body);
   border: 1px dashed var(--color-primary);
   color: var(--color-primary);
   font-weight: 700;
@@ -102,15 +102,27 @@
 
 /* Estado al copiar con éxito */
 .copy-phone.copied {
-  background-color: #DCFCE7;
-  border-color: #16A34A;
-  color: #15803D;
+background-color: #166534;
+  border-color: #22C55E;
+  color: #F0FDF4;
 }
 
 .copy-phone.copied::after {
   content: ' ¡Copiado!';
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+/* Ajuste específico de fondo y bordes en Modo Oscuro del copiar*/
+[data-theme="dark"] .copy-phone {
+  background-color: rgba(20, 184, 166, 0.1); /* Verde suave traslúcido */
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .copy-phone:hover {
+  background-color: var(--color-warning-surface);
+  color: var(--color-warning-text);
 }
 
 /* Cintillo superior permanente de ayuda en crisis */
@@ -165,4 +177,47 @@
 .header-sticky-wrapper.scrolled .lifeline-action {
   padding: 0.2rem 0.6rem;
   font-size: 0.75rem;
+}
+
+/* Botón de alternancia de modo oscuro/claro */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-body);
+}
+
+/* Control de visibilidad de íconos Sol/Luna */
+.theme-icon-sun,
+.theme-icon-moon {
+  width: 18px;
+  height: 18px;
+}
+
+[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+:root:not([data-theme="dark"]) .theme-icon-sun {
+  display: none;
+}
+
+:root:not([data-theme="dark"]) .theme-icon-moon {
+  display: block;
 }
