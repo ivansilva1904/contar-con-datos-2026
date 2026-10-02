@@ -1,0 +1,558 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0912.1023                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='39859aedf811a0e79fc748f7ff6974e69d49c1fb957bf4c8e53a80ef6983412e' _.fcp.WorkbookFingerprinting.true...creator-author-id='39859aedf811a0e79fc748f7ff6974e69d49c1fb957bf4c8e53a80ef6983412e' _.fcp.WorkbookFingerprinting.true...creator-license-type='public' _.fcp.WorkbookFingerprinting.true...creator-machine-id='8bc5424b9b47d1c26d1d55c64f3b12825da28f3152daac31fbac36dfb7fba9e3' _.fcp.WorkbookFingerprinting.true...license-type='public' _.fcp.WorkbookFingerprinting.true...machine-id='8bc5424b9b47d1c26d1d55c64f3b12825da28f3152daac31fbac36dfb7fba9e3' original-version='18.1' source-build='2026.2.3 (20262.26.0912.1023)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='DEIS' inline='true' name='federated.00grbrc0lefiov1bxoji20fk9g06' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='deis_tabla' name='excel-direct.12hmx150pmzrbi17gub710mcxqdg'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/ivans/OneDrive/Escritorio/Personal/contar con datos 2026/data/deis_tabla.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.12hmx150pmzrbi17gub710mcxqdg' name='Sheet1' table='[Sheet1$]' type='table'>
+          <columns gridOrigin='A1:J19180:no:A1:J19180:0' header='yes' outcome='6'>
+            <column datatype='integer' name='AÑO' ordinal='0' />
+            <column datatype='integer' name='PROVRES' ordinal='1' />
+            <column datatype='integer' name='SEXO' ordinal='2' />
+            <column datatype='string' name='CAUSA' ordinal='3' />
+            <column datatype='string' name='GRUPEDAD' ordinal='4' />
+            <column datatype='integer' name='CUENTA' ordinal='5' />
+            <column datatype='string' name='CAUSA_DESC' ordinal='6' />
+            <column datatype='string' name='PROVINCIA' ordinal='7' />
+            <column datatype='string' name='SEXO_DESC' ordinal='8' />
+            <column datatype='integer' name='GRUPEDAD_COD' ordinal='9' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:J19180:no:A1:J19180:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AÑO</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AÑO]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>AÑO</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PROVRES</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PROVRES]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>PROVRES</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEXO</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SEXO]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>SEXO</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CAUSA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CAUSA]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>CAUSA</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RAR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GRUPEDAD</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GRUPEDAD]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>GRUPEDAD</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RAR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUENTA</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CUENTA]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>CUENTA</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CAUSA_DESC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CAUSA_DESC]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>CAUSA_DESC</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RAR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PROVINCIA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PROVINCIA]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>PROVINCIA</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RAR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEXO_DESC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SEXO_DESC]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>SEXO_DESC</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RAR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GRUPEDAD_COD</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GRUPEDAD_COD]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>GRUPEDAD_COD</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Causa' datatype='string' name='[CAUSA]' role='dimension' type='nominal' />
+      <column caption='Causa Desc' datatype='string' name='[CAUSA_DESC]' role='dimension' type='nominal' />
+      <column caption='Cuenta' datatype='integer' name='[CUENTA]' role='measure' type='quantitative' />
+      <column caption='Grupedad' datatype='string' name='[GRUPEDAD]' role='dimension' type='nominal' />
+      <column caption='Grupedad Cod' datatype='integer' name='[GRUPEDAD_COD]' role='measure' type='quantitative' />
+      <column caption='Provincia' datatype='string' name='[PROVINCIA]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Provres' datatype='integer' name='[PROVRES]' role='measure' type='quantitative' />
+      <column caption='Sexo' datatype='integer' name='[SEXO]' role='measure' type='quantitative' />
+      <column caption='Sexo Desc' datatype='string' name='[SEXO_DESC]' role='dimension' type='nominal' />
+      <column caption='DEIS' datatype='table' name='[__tableau_internal_object_id__].[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='es_ES' class='hyper' dbname='C:/Users/ivans/AppData/Local/Temp/TableauTemp/#TableauTemp_0ymn1cb06m29dg1fcpcpu1uqtona.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='10/02/2026 08:37:41 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>AÑO</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[AÑO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AÑO</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PROVRES</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PROVRES]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PROVRES</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEXO</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SEXO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SEXO</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CAUSA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CAUSA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CAUSA</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>28</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RAR_S2' />
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GRUPEDAD</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[GRUPEDAD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GRUPEDAD</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RAR_S2' />
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUENTA</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[CUENTA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUENTA</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>75</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CAUSA_DESC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CAUSA_DESC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CAUSA_DESC</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>28</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RAR_S2' />
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PROVINCIA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PROVINCIA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PROVINCIA</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RAR_S2' />
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEXO_DESC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SEXO_DESC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SEXO_DESC</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RAR_S2' />
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GRUPEDAD_COD</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[GRUPEDAD_COD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GRUPEDAD_COD</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Argentina&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='DEIS' id='Sheet1_D09DDE378E1B47F39C7EAE0BE99A11B0'>
+            <properties context=''>
+              <relation connection='excel-direct.12hmx150pmzrbi17gub710mcxqdg' name='Sheet1' table='[Sheet1$]' type='table'>
+                <columns gridOrigin='A1:J19180:no:A1:J19180:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='AÑO' ordinal='0' />
+                  <column datatype='integer' name='PROVRES' ordinal='1' />
+                  <column datatype='integer' name='SEXO' ordinal='2' />
+                  <column datatype='string' name='CAUSA' ordinal='3' />
+                  <column datatype='string' name='GRUPEDAD' ordinal='4' />
+                  <column datatype='integer' name='CUENTA' ordinal='5' />
+                  <column datatype='string' name='CAUSA_DESC' ordinal='6' />
+                  <column datatype='string' name='PROVINCIA' ordinal='7' />
+                  <column datatype='string' name='SEXO_DESC' ordinal='8' />
+                  <column datatype='integer' name='GRUPEDAD_COD' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Hoja 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='DEIS' name='federated.00grbrc0lefiov1bxoji20fk9g06' />
+          </datasources>
+          <datasource-dependencies datasource='federated.00grbrc0lefiov1bxoji20fk9g06'>
+            <column caption='Cuenta' datatype='integer' name='[CUENTA]' role='measure' type='quantitative' />
+            <column caption='Grupedad' datatype='string' name='[GRUPEDAD]' role='dimension' type='nominal' />
+            <column caption='Grupedad Cod' datatype='integer' name='[GRUPEDAD_COD]' role='measure' type='quantitative' />
+            <column-instance column='[GRUPEDAD]' derivation='None' name='[none:GRUPEDAD:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CUENTA]' derivation='Sum' name='[sum:CUENTA:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[GRUPEDAD_COD]' derivation='Sum' name='[sum:GRUPEDAD_COD:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.00grbrc0lefiov1bxoji20fk9g06].[sum:CUENTA:qk]' />
+              <color column='[federated.00grbrc0lefiov1bxoji20fk9g06].[sum:GRUPEDAD_COD:qk]' />
+              <text column='[federated.00grbrc0lefiov1bxoji20fk9g06].[none:GRUPEDAD:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{6710120A-54DC-4360-B5F1-578E3B183156}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Hoja 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='175'>
+            <card pane-specification-id='0' param='[federated.00grbrc0lefiov1bxoji20fk9g06].[sum:GRUPEDAD_COD:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.00grbrc0lefiov1bxoji20fk9g06].[none:GRUPEDAD:nk]</field>
+            <field>[federated.00grbrc0lefiov1bxoji20fk9g06].[sum:GRUPEDAD_COD:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{53167235-E6AC-4101-A889-CCF359752117}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Hoja 1' width='192'>
+      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
+      HsaR9P+u2W6zYu+6ZAAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
