@@ -1,9 +1,14 @@
-/* Barra de navegación superior fija */
-.top-nav {
+/* Contenedor principal sticky que agrupa cintillo + navegación */
+.header-sticky-wrapper {
   position: sticky;
   top: 0;
-  z-index: 900;
-  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Barra de navegación interna */
+.top-nav {
+  background-color: var(--color-nav-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
   padding: 0.75rem 1.5rem;
@@ -64,4 +69,15 @@
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--color-border);
   padding-bottom: 0.5rem;
+}
+
+/* Asignamos las variables de color a las superficies*/
+.report-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 2.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
