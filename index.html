@@ -405,49 +405,50 @@
           </div>
         </section>
 
-<!-- Separador visual sutil entre el Dashboard de Power BI y el de Tableau -->
-<div class="section-divider"></div>
+        <!-- Separador visual sutil entre el Dashboard de Power BI y el de Tableau -->
+        <div class="section-divider"></div>
 
-<!-- Sección: Análisis por Edad y Distribución Geográfica -->
-<section id="dashboard-edades" class="report-card">
-  <h2 class="section-title">Distribución por Rangos Etarios y Mapas</h2>
-  <p>
-    Explora a continuación la distribución geográfica y el desglose por grupos de edad. Los controles interactivos permiten filtrar los datos directamente sobre el mapa.
-  </p>
+        <!-- Sección: Análisis por Edad y Distribución Geográfica -->
+        <section id="dashboard-edades" class="report-card">
+          <h2 class="section-title">Distribución por Rangos Etarios y Mapas</h2>
+          <p>
+            Explora a continuación la distribución geográfica y el desglose por
+            grupos de edad. Los controles interactivos permiten filtrar los
+            datos directamente sobre el mapa.
+          </p>
 
-  <!-- Envoltorio con padding interno y borde contenedor -->
-  <div class="tableau-wrapper">
-    <div class="iframe-container">
-      
-      <!-- Skeleton loader -->
-      <div class="skeleton-overlay">
-        <div class="skeleton-shimmer skeleton-header"></div>
-        <div class="skeleton-kpis">
-          <div class="skeleton-shimmer"></div>
-          <div class="skeleton-shimmer"></div>
-          <div class="skeleton-shimmer"></div>
-        </div>
-        <div class="skeleton-charts">
-          <div class="skeleton-shimmer"></div>
-          <div class="skeleton-shimmer"></div>
-        </div>
-        <div class="skeleton-message">
-          <div class="skeleton-spinner"></div>
-          <p class="skeleton-text">Cargando visualización de Tableau...</p>
-        </div>
-      </div>
+          <!-- Envoltorio con padding interno y borde contenedor -->
+          <div class="tableau-wrapper">
+            <div class="iframe-container">
+              <!-- Skeleton loader -->
+              <div class="skeleton-overlay">
+                <div class="skeleton-shimmer skeleton-header"></div>
+                <div class="skeleton-kpis">
+                  <div class="skeleton-shimmer"></div>
+                  <div class="skeleton-shimmer"></div>
+                  <div class="skeleton-shimmer"></div>
+                </div>
+                <div class="skeleton-charts">
+                  <div class="skeleton-shimmer"></div>
+                  <div class="skeleton-shimmer"></div>
+                </div>
+                <div class="skeleton-message">
+                  <div class="skeleton-spinner"></div>
+                  <p class="skeleton-text">Iniciando panel interactivo...</p>
+                </div>
+              </div>
 
-      <!-- Iframe de Tableau -->
-      <iframe 
-        id="tableau-frame"
-        title="Dashboard_Edades_y_Mapas"
-        src="https://public.tableau.com/views/reporte_central_edad_mapas/dashboard_edades?:showVizHome=no&:embed=true" 
-        allowfullscreen="true">
-      </iframe>
-
-    </div>
-  </div>
-</section>
+              <!-- Iframe de Tableau -->
+              <iframe
+                id="tableau-frame"
+                title="Dashboard_Edades_y_Mapas"
+                src="https://public.tableau.com/views/reporte_central_edad_mapas/dashboard_edades?:showVizHome=no&:embed=true"
+                allowfullscreen="true"
+              >
+              </iframe>
+            </div>
+          </div>
+        </section>
 
         <!-- Sección 3: Metodología y origen de los datos -->
         <section id="metodologia">
@@ -516,6 +517,72 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
+
+    <!-- Footer Institucional -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Columna 1: Identidad del Proyecto -->
+          <div class="footer-brand">
+            <h3 class="footer-title">Datos & Prevención</h3>
+            <p class="footer-description">
+              Plataforma interactiva de visualización de datos sobre salud
+              mental y prevención del suicidio en Argentina, orientada a la toma
+              de decisiones basada en evidencia.
+            </p>
+          </div>
+
+          <!-- Columna 2: Navegación Rápida -->
+          <div class="footer-links">
+            <h4 class="footer-subtitle">Navegación</h4>
+            <ul>
+              <li><a href="#contexto">Contexto</a></li>
+              <li><a href="#mitos">Mitos y Realidades</a></li>
+              <li><a href="#dashboard">Dashboard Principal</a></li>
+              <li><a href="#dashboard-edades">Mapas y Edades</a></li>
+              <li><a href="#recursos">Líneas de Ayuda</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Repositorios y Créditos -->
+          <div class="footer-credits">
+            <h4 class="footer-subtitle">Recursos y Código</h4>
+            <p class="footer-text">
+              Proyecto de código abierto desarrollado para la divulgación de
+              datos públicos oficiales (DEIS).
+            </p>
+            <div class="footer-actions">
+              <a
+                href="https://github.com/ivansilva1904/contar-con-datos-2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-github"
+              >
+                <!-- SVG Ícono GitHub -->
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+                Ver Repositorio
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Datos & Prevención. Información con fines educativos y
+            de concientización.
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <!-- Módulos de scripts en JavaScript -->
     <script src="js/theme.js"></script>

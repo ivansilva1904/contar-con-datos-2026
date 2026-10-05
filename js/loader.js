@@ -1,4 +1,4 @@
-// Gestión de estado de carga para iframes externos de Power BI o Tableau
+// Carga ágil sin retrasos artificiales
 document.addEventListener('DOMContentLoaded', () => {
   const iframeContainers = document.querySelectorAll('.iframe-container');
 
@@ -8,24 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!iframe || !skeleton) return;
 
-    // Función para retirar la animación del skeleton
-    const dismissSkeleton = () => {
+    // Ocultar el skeleton inmediatamente cuando el iframe responde
+    const hideSkeleton = () => {
       skeleton.classList.add('loaded');
       setTimeout(() => {
         skeleton.style.display = 'none';
-      }, 400); // Tiempo alineado con la transición de opacidad en CSS
+      }, 300); // Coincide con la transición fade-out de CSS
     };
 
-    // Evento estándar: el contenido del iframe terminó de procesarse
-    iframe.addEventListener('load', () => {
-      dismissSkeleton();
-    });
+    iframe.addEventListener('load', hideSkeleton);
 
-    // Respaldo de seguridad: ocultar el skeleton si pasan más de 10 segundos
+    // Timeout de respaldo a los 8 segundos por si falla la red
     setTimeout(() => {
       if (!skeleton.classList.contains('loaded')) {
-        dismissSkeleton();
+        hideSkeleton();
       }
-    }, 10000);
+    }, 8000);
   });
 });
