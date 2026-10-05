@@ -3,13 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const STORAGE_KEY = 'suicide_report_theme_preference';
 
-  // 1. Obtener preferencia guardada o la del sistema operativo
+  // 1. Obtener preferencia guardada; por defecto SIEMPRE 'light'
   const getPreferredTheme = () => {
     const savedTheme = localStorage.getItem(STORAGE_KEY);
     if (savedTheme) {
       return savedTheme;
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // Forzado a 'light' por defecto independientemente de la configuración del SO
+    return 'light';
   };
 
   // 2. Aplicar el tema en el elemento <html> raíz
@@ -22,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem(STORAGE_KEY, theme);
   };
 
-  // Inicializar tema guardado al cargar la página
+  // Inicializar tema al cargar la página
   const currentTheme = getPreferredTheme();
   setTheme(currentTheme);
 
-  // 3. Evento de clic en el botón selector de tema
+  // 3. Evento del botón selector de tema
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
