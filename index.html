@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/accordion.css" />
-    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/loader.css" />
   </head>
   <body>
     <!-- Modal de advertencia de contenido sensible (Trigger Warning) -->
@@ -116,13 +116,36 @@
               <li><a href="#recursos">Recursos de Apoyo</a></li>
               <li>
                 <!-- Botón de cambio de modo oscuro/claro -->
-                <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema">
+                <button
+                  type="button"
+                  class="theme-toggle-btn"
+                  id="theme-toggle-btn"
+                  aria-label="Cambiar tema"
+                >
                   <!-- Ícono de Luna (Modo Claro activo) -->
-                  <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  <svg
+                    class="theme-icon-moon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                    ></path>
                   </svg>
                   <!-- Ícono de Sol (Modo Oscuro activo) -->
-                  <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg
+                    class="theme-icon-sun"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
                     <circle cx="12" cy="12" r="5"></circle>
                     <line x1="12" y1="1" x2="12" y2="3"></line>
                     <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -134,7 +157,7 @@
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                   </svg>
                 </button>
-              </li>              
+              </li>
             </ul>
           </nav>
         </div>
@@ -382,6 +405,50 @@
           </div>
         </section>
 
+<!-- Separador visual sutil entre el Dashboard de Power BI y el de Tableau -->
+<div class="section-divider"></div>
+
+<!-- Sección: Análisis por Edad y Distribución Geográfica -->
+<section id="dashboard-edades" class="report-card">
+  <h2 class="section-title">Distribución por Rangos Etarios y Mapas</h2>
+  <p>
+    Explora a continuación la distribución geográfica y el desglose por grupos de edad. Los controles interactivos permiten filtrar los datos directamente sobre el mapa.
+  </p>
+
+  <!-- Envoltorio con padding interno y borde contenedor -->
+  <div class="tableau-wrapper">
+    <div class="iframe-container">
+      
+      <!-- Skeleton loader -->
+      <div class="skeleton-overlay">
+        <div class="skeleton-shimmer skeleton-header"></div>
+        <div class="skeleton-kpis">
+          <div class="skeleton-shimmer"></div>
+          <div class="skeleton-shimmer"></div>
+          <div class="skeleton-shimmer"></div>
+        </div>
+        <div class="skeleton-charts">
+          <div class="skeleton-shimmer"></div>
+          <div class="skeleton-shimmer"></div>
+        </div>
+        <div class="skeleton-message">
+          <div class="skeleton-spinner"></div>
+          <p class="skeleton-text">Cargando visualización de Tableau...</p>
+        </div>
+      </div>
+
+      <!-- Iframe de Tableau -->
+      <iframe 
+        id="tableau-frame"
+        title="Dashboard_Edades_y_Mapas"
+        src="https://public.tableau.com/views/reporte_central_edad_mapas/dashboard_edades?:showVizHome=no&:embed=true" 
+        allowfullscreen="true">
+      </iframe>
+
+    </div>
+  </div>
+</section>
+
         <!-- Sección 3: Metodología y origen de los datos -->
         <section id="metodologia">
           <h2 class="section-title">Fuentes y Metodología</h2>
@@ -451,7 +518,7 @@
     </button>
 
     <!-- Módulos de scripts en JavaScript -->
-    <script src="js/theme.js"></script>     
+    <script src="js/theme.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/main.js"></script>
     <script src="js/modal.js"></script>
