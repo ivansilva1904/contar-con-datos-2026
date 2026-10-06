@@ -12,6 +12,7 @@
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
   padding: 0.75rem 1.5rem;
+  box-sizing: border-box; /* Previene que el padding desborde el 100% de la pantalla */
 }
 
 .nav-inner {
@@ -30,19 +31,60 @@
 
 .nav-links {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--color-primary);
+}
+
+
+/* ==========================================================================
+   AJUSTES RESPONSIVE PARA SMARTPHONES Y PANTALLAS PEQUEÑAS (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .top-nav {
+    padding: 0.6rem 1rem; /* Reducimos el padding lateral del nav */
+  }
+
+  .nav-inner {
+    flex-direction: column; /* Apila la marca arriba y los enlaces abajo */
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .nav-brand {
+    font-size: var(--font-size-base); /* Ajuste sutil del tamaño de marca */
+  }
+
+  .nav-links {
+    flex-wrap: wrap; /* PERMITE que los enlaces bajen a una 2da fila en vez de salir de pantalla */
+    gap: 0.4rem 0.85rem; /* Menor espacio entre ítems para aprovechar la pantalla */
+    width: 100%;
+  }
+
+  .nav-links li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem; /* Tamaño de letra adaptado a móvil */
+    padding: 0.2rem 0;
+  }
 }
 
 /* Contenedor central del contenido */
@@ -173,6 +215,31 @@
   text-align: center;
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+}
+
+/* Compensación de desplazamiento para navbars pegajosos */
+section,
+.report-card,
+[id] {
+  /* Ajusta los 80px a la altura total real de tu navbar + cintillo */
+  scroll-margin-top: 120px; 
+}
+
+:root {
+  --header-height: 120px; /* Altura combinada de cintillo + nav */
+}
+
+/* En smartphones el nav suele ser un poco más alto si los enlaces bajan de línea */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 250px;
+  }
+}
+
+/* Aplicar la compensación a todas las secciones con ID de ancla */
+section[id],
+.report-card[id] {
+  scroll-margin-top: var(--header-height);
 }
 
 /* Layout responsivo para pantallas móviles */
