@@ -302,3 +302,46 @@ section[id],
     padding-top: 0;
   }
 }
+
+  /* Grilla de 2 columnas para dashboards paralelos */
+.dashboards-grid-two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* La columna izquierda es ligeramente más ancha por ser 16:9 */
+  gap: 1.25rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.margin-top-md {
+  margin-top: 2rem;
+}
+
+/* Vista vertical contenida */
+.iframe-container.aspect-vertical {
+  padding-top: 0;
+  height: 650px;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .iframe-container.aspect-vertical {
+    height: 550px;
+  }
+}
+
+/* Adaptación responsive para tablets y smartphones */
+@media (max-width: 1024px) {
+  .dashboards-grid-two-col {
+    grid-template-columns: 1fr; /* En pantallas medianas y pequeñas se apilan verticalmente */
+  }
+
+  .dashboards-grid-two-col .aspect-16-9 {
+    height: 420px;
+  }
+
+  .dashboards-grid-two-col .aspect-vertical-col {
+    height: 500px;
+  }
+}
