@@ -1,4 +1,5 @@
-/* Transición de salida del Skeleton Overlay */
+
+/* Contenedor overlay del Skeleton */
 .skeleton-overlay {
   position: absolute;
   top: 0;
@@ -11,61 +12,75 @@
   flex-direction: column;
   padding: 1.5rem;
   box-sizing: border-box;
+  gap: 1.25rem; /* Espaciado entre bloques principales */
   opacity: 1;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Estado oculto */
 .skeleton-overlay.loaded {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-/* Animación de brillo (shimmer) que simula la carga activa */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
+/* Efecto base de brillo animado */
 .skeleton-shimmer {
   background: linear-gradient(
     90deg,
-    #E2E8F0 25%,
-    #F1F5F9 37%,
-    #E2E8F0 63%
+    var(--color-bg-body) 25%,
+    var(--color-border) 50%,
+    var(--color-bg-body) 75%
   );
   background-size: 200% 100%;
-  animation: shimmer 1.6s infinite ease-in-out;
+  animation: shimmer 1.5s infinite linear;
   border-radius: var(--radius-sm);
 }
 
-/* Maquetación del esqueleto imitando la vista previa de un dashboard */
-.skeleton-header {
-  height: 48px;
-  width: 40%;
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
+/* Encabezado del Skeleton */
+.skeleton-header {
+  height: 2.5rem;
+  width: 60%;
+  margin-bottom: 0.5rem;
+}
+
+/* Fila de Tarjetas KPI con separación limpia */
 .skeleton-kpis {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  height: 70px;
+  gap: 1rem; /* Espaciado entre las 3 tarjetas de KPI */
+  width: 100%;
 }
 
+.skeleton-kpis .skeleton-shimmer {
+  height: 4.5rem;
+  width: 100%;
+}
+
+/* Fila de Gráficos con separación */
 .skeleton-charts {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem; /* Espaciado entre los dos gráficos */
   flex: 1;
+  width: 100%;
+  min-height: 180px;
 }
 
-/* Mensaje y spinner informativo en el centro del esqueleto */
-/* Mensaje flotante: aparece suavemente tras 1.2 segundos para dar protagonismo al skeleton */
+.skeleton-charts .skeleton-shimmer {
+  height: 100%;
+  width: 100%;
+}
+
+/* Mensaje e indicador central */
 .skeleton-message {
   position: absolute;
   top: 50%;
@@ -75,34 +90,28 @@
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 0.85rem 1.35rem;
+  background-color: var(--color-bg-surface);
+  padding: 1rem 1.5rem;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
-  opacity: 0;
-  animation: fadeInMessage 0.5s ease 1.2s forwards; /* Inicia tras 1.2s */
-}
-
-@keyframes fadeInMessage {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Soporte de opacidad del mensaje en modo oscuro */
-[data-theme="dark"] .skeleton-message {
-  background: rgba(30, 41, 59, 0.92);
-  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
 }
 
 .skeleton-spinner {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border: 3px solid var(--color-border);
   border-top-color: var(--color-primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+}
+
+.skeleton-text {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 @keyframes spin {
@@ -111,11 +120,13 @@
   }
 }
 
-.skeleton-text {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-main);
-  font-weight: 600;
-  margin: 0;
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+  .skeleton-kpis,
+  .skeleton-charts {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 }
 
 /* Adaptación del marco y contenedor en Modo Oscuro */

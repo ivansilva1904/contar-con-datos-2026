@@ -110,9 +110,9 @@
           <nav>
             <ul class="nav-links">
               <li><a href="#contexto">Contexto</a></li>
-              <li><a href="#dashboard">Dashboard Interactivo</a></li>
+              <li><a href="#dashboard">Dashboards</a></li>
+              <li><a href="#mitos">Mitos</a></li>
               <li><a href="#metodologia">Metodología</a></li>
-              <li><a href="#mitos">Mitos y Realidades</a></li>
               <li><a href="#recursos">Recursos de Apoyo</a></li>
               <li>
                 <!-- Botón de cambio de modo oscuro/claro -->
@@ -440,51 +440,55 @@
         <div class="section-divider"></div>
 
         <!-- Sección: Distribución por Sexo -->
-<!-- Sección: Distribución por Sexo -->
-<section id="sexo" class="report-card">
-  <h2 class="section-title">Distribución por Sexo</h2>
-  <p class="section-description">
-    Análisis comparativo de tasas e indicadores desglosados por sexo. Cambia de vista con los botones a continuación.
-  </p>
+        <!-- Sección: Distribución por Sexo -->
+        <section id="sexo" class="report-card">
+          <h2 class="section-title">Distribución por Sexo</h2>
+          <p class="section-description">
+            Análisis comparativo de tasas e indicadores desglosados por sexo.
+            Cambia de vista con los botones a continuación.
+          </p>
 
-  <!-- Botones de Pestañas con el parámetro navContentPaneEnabled=false -->
-  <div class="tab-buttons">
-    <button 
-      type="button" 
-      class="tab-btn active" 
-      data-url="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&navContentPaneEnabled=false"
-      data-aspect="aspect-16-9">
-      Vista General (16:9)
-    </button>
-    <button 
-      type="button" 
-      class="tab-btn" 
-      data-url="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=524c3b90f567ecc38a85&navContentPaneEnabled=false"
-      data-aspect="aspect-vertical">
-      Informe Ejecutivo Vertical
-    </button>
-  </div>
+          <!-- Botones de Pestañas con el parámetro navContentPaneEnabled=false -->
+          <div class="tab-buttons">
+            <button
+              type="button"
+              class="tab-btn active"
+              data-url="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&navContentPaneEnabled=false"
+              data-aspect="aspect-16-9"
+            >
+              Vista General (16:9)
+            </button>
+            <button
+              type="button"
+              class="tab-btn"
+              data-url="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=524c3b90f567ecc38a85&navContentPaneEnabled=false"
+              data-aspect="aspect-vertical"
+            >
+              Informe Ejecutivo Vertical
+            </button>
+          </div>
 
-  <!-- Contenedor con iframe limpio -->
-  <div class="iframe-container aspect-16-9" id="sexo-iframe-container">
-    <div class="skeleton-overlay">
-      <div class="skeleton-shimmer skeleton-header"></div>
-      <div class="skeleton-charts">
-        <div class="skeleton-shimmer"></div>
-      </div>
-      <div class="skeleton-message">
-        <div class="skeleton-spinner"></div>
-        <p class="skeleton-text">Cargando reporte por Sexo...</p>
-      </div>
-    </div>
-    <iframe
-      id="sexo-iframe"
-      title="Reporte_Sexo"
-      src="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&navContentPaneEnabled=false"
-      allowfullscreen="true">
-    </iframe>
-  </div>
-</section>
+          <!-- Contenedor con iframe limpio -->
+          <div class="iframe-container aspect-16-9" id="sexo-iframe-container">
+            <div class="skeleton-overlay">
+              <div class="skeleton-shimmer skeleton-header"></div>
+              <div class="skeleton-charts">
+                <div class="skeleton-shimmer"></div>
+              </div>
+              <div class="skeleton-message">
+                <div class="skeleton-spinner"></div>
+                <p class="skeleton-text">Cargando reporte por Sexo...</p>
+              </div>
+            </div>
+            <iframe
+              id="sexo-iframe"
+              title="Reporte_Sexo"
+              src="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&navContentPaneEnabled=false"
+              allowfullscreen="true"
+            >
+            </iframe>
+          </div>
+        </section>
 
         <!-- Sección 3: Metodología y origen de los datos -->
         <section id="metodologia">
@@ -574,8 +578,7 @@
             <ul>
               <li><a href="#contexto">Contexto</a></li>
               <li><a href="#mitos">Mitos y Realidades</a></li>
-              <li><a href="#dashboard">Dashboard Principal</a></li>
-              <li><a href="#dashboard-edades">Mapas y Edades</a></li>
+              <li><a href="#dashboard">Dashboards</a></li>
               <li><a href="#recursos">Líneas de Ayuda</a></li>
             </ul>
           </div>
