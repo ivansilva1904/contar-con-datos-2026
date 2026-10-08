@@ -6,9 +6,49 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Inicializar copia de números al portapapeles
   setupClickToCopy();
 
-  // 3. Inicializar la reduccion del cintillo al scrollear
+  // 3. Inicializar la reducción del cintillo al scrollear
   setupStickyHeader();
+
+  // 4. Inicializar pestañas para alternar vistas de Power BI
+  setupDashboardTabs();
 });
+
+// Switcher para alternar entre la Vista General y el Informe Ejecutivo en Power BI
+function setupDashboardTabs() {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const iframe = document.getElementById('sexo-iframe');
+  const container = document.getElementById('sexo-iframe-container');
+
+  if (!tabButtons.length || !iframe || !container) return;
+
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // Evitar recargar si ya está activa
+      if (button.classList.contains('active')) return;
+
+      const newUrl = button.getAttribute('data-url');
+      const newAspect = button.getAttribute('data-aspect');
+      const skeleton = container.querySelector('.skeleton-overlay');
+
+      // 1. Actualizar estado visual de los botones
+      tabButtons.forEach((btn) => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // 2. Reactivar el Skeleton Loader mientras se descarga la nueva vista
+      if (skeleton) {
+        skeleton.style.display = 'flex';
+        skeleton.classList.remove('loaded');
+      }
+
+      // 3. Ajustar las proporciones del contenedor (16:9 o vertical)
+      container.classList.remove('aspect-16-9', 'aspect-vertical');
+      container.classList.add(newAspect);
+
+      // 4. Cargar la nueva URL en el iframe
+      iframe.src = newUrl;
+    });
+  });
+}
 
 // Reduce la altura del cintillo cuando el usuario hace scroll
 function setupStickyHeader() {
@@ -62,7 +102,7 @@ function setupClickToCopy() {
 
         // Feedback visual al copiar con éxito
         const originalText = el.getAttribute('title') || 'Clic para copiar';
-        
+
         el.setAttribute('title', '¡Número copiado!');
         el.classList.add('copied');
 
