@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Inicializar la reducción del cintillo al scrollear
   setupStickyHeader();
 
-  // 4. Inicializar pestañas para alternar vistas de Power BI
-  setupDashboardTabs();
 });
 
 // Switcher para alternar entre la Vista General y el Informe Ejecutivo en Power BI
