@@ -405,50 +405,86 @@
           </div>
         </section>
 
-        <!-- Separador visual sutil entre el Dashboard de Power BI y el de Tableau -->
+        <!-- Separador visual  -->
         <div class="section-divider"></div>
 
-        <!-- Sección: Análisis por Edad y Distribución Geográfica -->
-        <section id="dashboard-edades" class="report-card">
-          <h2 class="section-title">Distribución por Rangos Etarios y Mapas</h2>
-          <p>
-            Explora a continuación la distribución geográfica y el desglose por
-            grupos de edad. Los controles interactivos permiten filtrar los
-            datos directamente sobre el mapa.
+        <!-- Sección: Grupos Etarios -->
+        <section id="grupos-etarios" class="report-card">
+          <h2 class="section-title">Distribución por Grupos Etarios</h2>
+          <p class="section-description">
+            Desglose de indicadores según franjas de edad.
           </p>
 
-          <!-- Envoltorio con padding interno y borde contenedor -->
-          <div class="tableau-wrapper">
-            <div class="iframe-container">
-              <!-- Skeleton loader -->
-              <div class="skeleton-overlay">
-                <div class="skeleton-shimmer skeleton-header"></div>
-                <div class="skeleton-kpis">
-                  <div class="skeleton-shimmer"></div>
-                  <div class="skeleton-shimmer"></div>
-                  <div class="skeleton-shimmer"></div>
-                </div>
-                <div class="skeleton-charts">
-                  <div class="skeleton-shimmer"></div>
-                  <div class="skeleton-shimmer"></div>
-                </div>
-                <div class="skeleton-message">
-                  <div class="skeleton-spinner"></div>
-                  <p class="skeleton-text">Iniciando panel interactivo...</p>
-                </div>
+          <div class="iframe-container aspect-16-9">
+            <div class="skeleton-overlay">
+              <div class="skeleton-shimmer skeleton-header"></div>
+              <div class="skeleton-charts">
+                <div class="skeleton-shimmer"></div>
               </div>
-
-              <!-- Iframe de Tableau -->
-              <iframe
-                id="tableau-frame"
-                title="Dashboard_Edades_y_Mapas"
-                src="https://public.tableau.com/views/reporte_central_edad_mapas/dashboard_edades?:showVizHome=no&:embed=true"
-                allowfullscreen="true"
-              >
-              </iframe>
+              <div class="skeleton-message">
+                <div class="skeleton-spinner"></div>
+                <p class="skeleton-text">
+                  Cargando reporte de Grupos Etarios...
+                </p>
+              </div>
             </div>
+            <iframe
+              title="Reporte_Grupos_Etarios"
+              src="https://app.powerbi.com/view?r=eyJrIjoiMjBmNmFiNDktMWM4MC00NTkwLWJmMzgtNTgwYmQ0NmU1ZjEzIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9"
+              allowfullscreen="true"
+            >
+            </iframe>
           </div>
         </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sección: Distribución por Sexo -->
+<!-- Sección: Distribución por Sexo -->
+<section id="sexo" class="report-card">
+  <h2 class="section-title">Distribución por Sexo</h2>
+  <p class="section-description">
+    Análisis comparativo de tasas e indicadores desglosados por sexo. Cambia de vista con los botones a continuación.
+  </p>
+
+  <!-- Botones de Pestañas con el parámetro navContentPaneEnabled=false -->
+  <div class="tab-buttons">
+    <button 
+      type="button" 
+      class="tab-btn active" 
+      data-url="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&navContentPaneEnabled=false"
+      data-aspect="aspect-16-9">
+      Vista General (16:9)
+    </button>
+    <button 
+      type="button" 
+      class="tab-btn" 
+      data-url="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=524c3b90f567ecc38a85&navContentPaneEnabled=false"
+      data-aspect="aspect-vertical">
+      Informe Ejecutivo Vertical
+    </button>
+  </div>
+
+  <!-- Contenedor con iframe limpio -->
+  <div class="iframe-container aspect-16-9" id="sexo-iframe-container">
+    <div class="skeleton-overlay">
+      <div class="skeleton-shimmer skeleton-header"></div>
+      <div class="skeleton-charts">
+        <div class="skeleton-shimmer"></div>
+      </div>
+      <div class="skeleton-message">
+        <div class="skeleton-spinner"></div>
+        <p class="skeleton-text">Cargando reporte por Sexo...</p>
+      </div>
+    </div>
+    <iframe
+      id="sexo-iframe"
+      title="Reporte_Sexo"
+      src="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&navContentPaneEnabled=false"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+</section>
 
         <!-- Sección 3: Metodología y origen de los datos -->
         <section id="metodologia">

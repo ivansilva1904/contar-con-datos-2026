@@ -249,3 +249,56 @@ section[id],
     gap: 2rem;
   }
 }
+
+/* Contenedor base de iframe */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Proporción Estándar 16:9 (para 1600x900 y 1920x1080) */
+.iframe-container.aspect-16-9 {
+  padding-top: 56.25%; /* (900/1600) * 100 = 56.25% */
+  min-height: 450px;
+}
+
+/* Proporción Vertical / Formato Carta (para 816x1056) */
+.iframe-container.aspect-vertical {
+  padding-top: 0;       /* Desactivamos el cálculo por porcentaje */
+  height: 650px;        /* Altura fija cómoda en escritorio */
+  max-width: 850px;     /* Ancho máximo centrado */
+  margin-left: auto;
+  margin-right: auto;
+  transition: height 0.3s ease;
+}
+
+.margin-top-md {
+  margin-top: 2rem;
+}
+
+/* Adaptación responsive para teléfonos */
+@media (max-width: 768px) {
+  .iframe-container.aspect-16-9 {
+    padding-top: 75%; /* Da más altura vertical en pantallas angostas */
+    min-height: 500px;
+  }
+
+  .iframe-container.aspect-vertical {
+    height: 550px; /* Altura contenida para móviles */
+    padding-top: 0;
+  }
+}
