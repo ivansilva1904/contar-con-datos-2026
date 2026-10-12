@@ -39,3 +39,17 @@ a {
 a:hover {
   color: var(--color-primary-hover);
 }
+
+/* Estilos para listas dentro de las secciones de texto */
+#recursos ul,
+main ul {
+  padding-left: 1.5rem; /* O "padding-left: 24px;" */
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#recursos li,
+main li {
+  margin-bottom: 0.75rem; /* Espaciado entre cada viñeta */
+  line-height: 1.6;
+}
