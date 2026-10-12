@@ -110,8 +110,8 @@
           <nav>
             <ul class="nav-links">
               <li><a href="#contexto">Contexto</a></li>
-              <li><a href="#dashboard">Dashboards</a></li>
               <li><a href="#mitos">Mitos</a></li>
+              <li><a href="#dashboard">Dashboards</a></li>
               <li><a href="#metodologia">Metodología</a></li>
               <li><a href="#recursos">Recursos de Apoyo</a></li>
               <li>
@@ -184,10 +184,9 @@
           <p>
             El suicidio es un problema de salud pública prioritario y
             prevenible. A través de este informe se analizan las tasas
-            estandarizadas, la distribución geográfica por provincias y los
-            grupos etarios más expuestos, utilizando como fuente los datos de la
-            Dirección de Estadísticas e Información de Salud (DEIS) del
-            Ministerio de Salud de la Nación.
+            estandarizadas, la distribución geográfica por provincias, y los
+            grupos etarios más expuestos entre otros aspectos, utilizando como fuente los datos publicos 
+            y anonimizados del Ministerio de Salud y Seguridad de la Nación.
           </p>
         </section>
 
@@ -366,10 +365,18 @@
         <!-- ******************DIAGRAMAS****************** -->
         <!-- Dashboard Principal / General (Power BI) -->
         <section id="dashboard">
-          <h2 class="section-title">Visión General de Indicadores</h2>
+          <h2 class="section-title">Análisis de la Evolución de las Fuentes de Datos</h2>
           <p class="section-description">
-            Panorama general interactivo de la mortalidad por suicidio en
-            Argentina.
+            Lo primero a tratar en este análisis son las fuentes de datos que decidimos utilizar,
+            las cuales son dos: la Dirección de Estadísticas e Información en Salud (DEIS, dependiente
+            del Ministerio de Salud) y el Sistema Nacional de Información Criminal (SNIC, dependiente
+            del Ministerio de Seguridad).
+            <br>Ambas fuentes cuentan con sus particularidades en lo que a información se refiere, 
+            pero los dos puntos más importantes que queremos resaltar en este apartado son que:
+            <br>1. DEIS abarca el período de 2005 a 2024, mientras que SNIC lleva registros desde el año 2000 hasta el 2025
+            <br>2. Existen discrepancias con respecto a la cantidad de suicidios registrados entre DEIS y SNIC
+            <br>Para visualizar estas diferencias tenemos el siguiente tablero que grafica la evolución 
+            en casos totales y en variación interanual bajo los mismos ejes Y:
           </p>
 
           <div class="iframe-container aspect-16-9">
@@ -390,16 +397,23 @@
             >
             </iframe>
           </div>
+          <p class="section-description">
+            Como se puede observar, las dos fuentes pintan una imagen bastante diferente entre sí 
+            donde en algunos años existen diferencias notables de hasta miles de casos. No obstante, 
+            nuestro propósito con exponer este hecho no radica en descartar o desacreditar una u otra 
+            fuente, sino en brindar al lector total transparencia al momento de avanzar con el 
+            análisis del resto de apartados con el rigor que este tema requiere.
+          </p>
         </section>
 
         <div class="section-divider"></div>
 
         <!-- Sección: Analisis 2025 -->
         <section id="dashboard">
-          <h2 class="section-title">Análisis de los Reportes 2025</h2>
+          <h2 class="section-title">Reporte 2025</h2>
           <p>
             Explora a continuación las variables temporales y geográficas
-            mediante el panel interactivo.
+            mediante el panel interactivo del último año del que se poseen registros.
           </p>
 
           <div class="iframe-container aspect-16-9">
@@ -439,45 +453,11 @@
         <!-- Separador visual  -->
         <div class="section-divider"></div>
 
-        <!-- Sección: Análisis de Estacionalidad -->
-        <section id="estacionalidad">
-          <h2 class="section-title">Análisis de Estacionalidad</h2>
-          <p class="section-description">
-            Evolución temporal y patrones estacionales registrados en las series
-            de datos oficiales.
-          </p>
-
-          <div class="iframe-container aspect-16-9">
-            <div class="skeleton-overlay">
-              <div class="skeleton-shimmer skeleton-header"></div>
-              <div class="skeleton-charts">
-                <div class="skeleton-shimmer"></div>
-              </div>
-              <div class="skeleton-message">
-                <div class="skeleton-spinner"></div>
-                <p class="skeleton-text">
-                  Cargando reporte de Estacionalidad...
-                </p>
-              </div>
-            </div>
-            <iframe
-              id="estacionalidad-iframe"
-              title="Reporte_Estacionalidad"
-              src="https://app.powerbi.com/view?r=eyJrIjoiNjNiMDc5MzgtYjNhMS00ZTFjLTgxZTgtZjk5ZWZhZDA5ZTZmIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=c20a246b6212b76d78f0&navContentPaneEnabled=false"
-              allowfullscreen="true"
-            >
-            </iframe>
-          </div>
-        </section>
-
-        <!-- Separador visual  -->
-        <div class="section-divider"></div>
-
         <!-- Sección: Grupos Etarios -->
         <section id="grupos-etarios">
           <h2 class="section-title">Distribución por Grupos Etarios</h2>
           <p class="section-description">
-            Desglose de indicadores según franjas de edad.
+            Desglose de indicadores según franjas de edad en el periodo 2005-2024 con la fuente DEIS.
           </p>
 
           <div class="iframe-container aspect-16-9">
@@ -532,36 +512,47 @@
           </div>
 
           <!-- Vista Detallada Vertical -->
-          <div class="iframe-container aspect-vertical margin-top-md">
-            <div class="skeleton-overlay">
-              <div class="skeleton-shimmer skeleton-header"></div>
-              <div class="skeleton-charts">
-                <div class="skeleton-shimmer"></div>
+          <div class="contenedor-grafico-texto">
+            <div class="iframe-container aspect-vertical">
+              <div class="skeleton-overlay">
+                <div class="skeleton-shimmer skeleton-header"></div>
+                <div class="skeleton-charts">
+                  <div class="skeleton-shimmer"></div>
+                </div>
+                <div class="skeleton-message">
+                  <div class="skeleton-spinner"></div>
+                  <p class="skeleton-text">
+                    Cargando informe provincial por sexo...
+                  </p>
+                </div>
               </div>
-              <div class="skeleton-message">
-                <div class="skeleton-spinner"></div>
-                <p class="skeleton-text">
-                  Cargando informe ejecutivo por sexo...
-                </p>
-              </div>
+              <iframe
+                title="Reporte_Sexo_Detalle"
+                src="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=524c3b90f567ecc38a85&navContentPaneEnabled=false"
+                allowfullscreen="true"
+              >
+              </iframe>
             </div>
-            <iframe
-              title="Reporte_Sexo_Detalle"
-              src="https://app.powerbi.com/view?r=eyJrIjoiNzBmNzMxNWYtMDI2NS00ZjY2LTg5MTgtNmQ3Y2E0ODk0MTIxIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=524c3b90f567ecc38a85&navContentPaneEnabled=false"
-              allowfullscreen="true"
-            >
-            </iframe>
+            <div class="columna-mitad">
+              <p class="section-description">
+                Los datos del sexo registrados en la fuente de DEIS se definen con códigos donde el 1 es 
+                para los hombres, el 2 para las mujeres y el 9 para los casos donde el sexo no se pudo 
+                determinar, pero existe un caso anómalo donde un registro del año 2024 de la provincia 
+                de Jujuy tiene el código 3, el cual decidimos catalogar como "Desconocido". 
+                <br>Si bien este caso no se puede visualizar en ninguno de los tableros, nos pareció 
+                relevante mencionarlo aunque sea como esta aclaración.
+              </p>
+            </div>
           </div>
         </section>
 
-        <div class="section-divider"></div>
+        <div class="section-divider"><br></div>
 
         <!-- Sección: Mapas y Distribución Geográfica (Tableau) -->
         <section id="mapas-tableau">
-          <h2 class="section-title">Distribución Geográfica y Mapas</h2>
+          <h2 class="section-title">Distribución Geográfica</h2>
           <p class="section-description">
-            Análisis espacial por provincias y jurisdicciones mediante mapas
-            interactivos.
+            Análisis espacial por provincias mediante mapa interactivo.
           </p>
 
           <div class="tableau-container">
@@ -630,6 +621,40 @@
           </div>
         </section>
 
+        <!-- Separador visual  -->
+        <div class="section-divider"><br></div>
+
+        <!-- Sección: Análisis de Estacionalidad -->
+        <section id="estacionalidad">
+          <h2 class="section-title">Análisis de Estacionalidad</h2>
+          <p class="section-description">
+            Evolución mensual analizada por media y mediana durante el período 2000-2025 con la fuente
+            SNIC.
+          </p>
+
+          <div class="iframe-container aspect-16-9">
+            <div class="skeleton-overlay">
+              <div class="skeleton-shimmer skeleton-header"></div>
+              <div class="skeleton-charts">
+                <div class="skeleton-shimmer"></div>
+              </div>
+              <div class="skeleton-message">
+                <div class="skeleton-spinner"></div>
+                <p class="skeleton-text">
+                  Cargando reporte de Estacionalidad...
+                </p>
+              </div>
+            </div>
+            <iframe
+              id="estacionalidad-iframe"
+              title="Reporte_Estacionalidad"
+              src="https://app.powerbi.com/view?r=eyJrIjoiNjNiMDc5MzgtYjNhMS00ZTFjLTgxZTgtZjk5ZWZhZDA5ZTZmIiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&pageName=c20a246b6212b76d78f0&navContentPaneEnabled=false"
+              allowfullscreen="true"
+            >
+            </iframe>
+          </div>
+        </section>
+
         <div class="section-divider"></div>
 
         <!-- Sección 3: Metodología y origen de los datos -->
@@ -637,8 +662,9 @@
           <h2 class="section-title">Fuentes y Metodología</h2>
           <p>
             Los registros corresponden a las defunciones registradas bajo los
-            códigos CIE-10 (X60-X84). El procesamiento y limpieza de datos fue
-            realizado en Python y modelado para visualización en Power BI.
+            códigos CIE-10 (X60-X84) en la fuente del Ministerio de Salud y las registradas por el 
+            codigo 31 para el Ministerio de Seguridad. El procesamiento y limpieza de datos fue
+            realizado en Python y modelado para visualización en Power BI y Tableau.
           </p>
         </section>
 
@@ -731,7 +757,7 @@
             <h4 class="footer-subtitle">Recursos y Código</h4>
             <p class="footer-text">
               Proyecto de código abierto desarrollado para la divulgación de
-              datos públicos oficiales (DEIS).
+              datos públicos oficiales.
             </p>
             <div class="footer-actions">
               <a

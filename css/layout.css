@@ -291,18 +291,48 @@ section[id],
   border: none;
 }
 
+.contenedor-grafico-texto {
+  display: flex;
+  flex-direction: row; /* Coloca los elementos uno al lado del otro */
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Define el ancho del texto en escritorio */
+.columna-mitad {
+  width: 50%;
+}
+
+
 /* Contenedor recortador para el formato vertical */
 .iframe-container.aspect-vertical {
   position: relative;
-  width: 100%;
+  width: 50%;
   max-width: 850px;
   height: 620px; /* Altura del marco visible */
   overflow: hidden; /* Corta la barra sobrante */
-  margin-left: auto;
-  margin-right: auto;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  margin: 0;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   background-color: var(--color-bg-surface);
+}
+
+/* MEDIA QUERY: Cambios para pantallas menores a 768px (Tablets y celulares) */
+@media (max-width: 768px) {
+  .contenedor-grafico-texto {
+    flex-direction: column; /* Cambia de fila a columna (apila los elementos) */
+    gap: 1.5rem; /* Reduce un poco el espacio entre ambos */
+  }
+
+  /* Obliga a que tanto el texto como el gráfico ocupen el 100% del ancho disponible */
+  .columna-mitad,
+  .iframe-container.aspect-vertical {
+    width: 100%;
+  }
 }
 
 .iframe-container.aspect-vertical iframe {
