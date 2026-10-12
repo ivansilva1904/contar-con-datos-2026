@@ -270,20 +270,48 @@ section[id],
   border: none;
 }
 
-/* Proporción Estándar 16:9 (para 1600x900 y 1920x1080) */
+/* Contenedor recortador base para reportes 16:9 */
 .iframe-container.aspect-16-9 {
-  padding-top: 56.25%; /* (900/1600) * 100 = 56.25% */
-  min-height: 450px;
+  position: relative;
+  width: 100%;
+  padding-top: 53.5%; /* Reducido de 56.25% a 53.5% para recortar la parte inferior */
+  height: 0;
+  overflow: hidden; /* Oculta la barra de Power BI empujada */
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
 }
 
-/* Proporción Vertical / Formato Carta (para 816x1056) */
+.iframe-container.aspect-16-9 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 106%; /* Empuja la barra inferior de Power BI hacia abajo */
+  border: none;
+}
+
+/* Contenedor recortador para el formato vertical */
 .iframe-container.aspect-vertical {
-  padding-top: 0;       /* Desactivamos el cálculo por porcentaje */
-  height: 650px;        /* Altura fija cómoda en escritorio */
-  max-width: 850px;     /* Ancho máximo centrado */
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  height: 620px; /* Altura del marco visible */
+  overflow: hidden; /* Corta la barra sobrante */
   margin-left: auto;
   margin-right: auto;
-  transition: height 0.3s ease;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+}
+
+.iframe-container.aspect-vertical iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 38px); /* Suma exactamente los 38px que mide la barra inferior */
+  border: none;
 }
 
 .margin-top-md {

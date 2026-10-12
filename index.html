@@ -364,6 +364,36 @@
         </section>
 
         <!-- ******************DIAGRAMAS****************** -->
+        <!-- Dashboard Principal / General (Power BI) -->
+        <section id="dashboard">
+          <h2 class="section-title">Visión General de Indicadores</h2>
+          <p class="section-description">
+            Panorama general interactivo de la mortalidad por suicidio en
+            Argentina.
+          </p>
+
+          <div class="iframe-container aspect-16-9">
+            <div class="skeleton-overlay">
+              <div class="skeleton-shimmer skeleton-header"></div>
+              <div class="skeleton-charts">
+                <div class="skeleton-shimmer"></div>
+              </div>
+              <div class="skeleton-message">
+                <div class="skeleton-spinner"></div>
+                <p class="skeleton-text">Cargando visión general...</p>
+              </div>
+            </div>
+            <iframe
+              title="Reporte_General_Indicadores"
+              src="https://app.powerbi.com/view?r=eyJrIjoiNTAwNWRmODAtZmZkZi00YzhkLTkxYmEtMTAyYmIwZWYzNTA2IiwidCI6IjQ2MmMwMmM1LTQ2NTUtNDJlZC1hNGRjLWVmNGU1MTdiNjQ1NCIsImMiOjR9&navContentPaneEnabled=false"
+              allowfullscreen="true"
+            >
+            </iframe>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
         <!-- Sección: Analisis 2025 -->
         <section id="dashboard">
           <h2 class="section-title">Análisis de los Reportes 2025</h2>
@@ -372,7 +402,7 @@
             mediante el panel interactivo.
           </p>
 
-          <div class="iframe-container">
+          <div class="iframe-container aspect-16-9">
             <!-- Esqueleto animado superpuesto -->
             <div class="skeleton-overlay" id="dashboard-skeleton">
               <div class="skeleton-shimmer skeleton-header"></div>
@@ -526,8 +556,84 @@
 
         <div class="section-divider"></div>
 
+        <!-- Sección: Mapas y Distribución Geográfica (Tableau) -->
+        <section id="mapas-tableau">
+          <h2 class="section-title">Distribución Geográfica y Mapas</h2>
+          <p class="section-description">
+            Análisis espacial por provincias y jurisdicciones mediante mapas
+            interactivos.
+          </p>
+
+          <div class="tableau-container">
+            <div
+              class="tableauPlaceholder"
+              id="viz1791498892352"
+              style="position: relative; width: 100%"
+            >
+              <noscript>
+                <a href="#">
+                  <img
+                    alt="Dashboard 1"
+                    src="https://public.tableau.com/static/images/re/reporte_mapas/Dashboard1/1_rss.png"
+                    style="border: none"
+                  />
+                </a>
+              </noscript>
+              <object class="tableauViz" style="display: none">
+                <param
+                  name="host_url"
+                  value="https%3A%2F%2Fpublic.tableau.com%2F"
+                />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="reporte_mapas&#47;Dashboard1" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param
+                  name="static_image"
+                  value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;re&#47;reporte_mapas&#47;Dashboard1&#47;1.png"
+                />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="es-ES" />
+              </object>
+            </div>
+            <script type="text/javascript">
+              var divElement = document.getElementById("viz1791498892352");
+              var vizElement = divElement.getElementsByTagName("object")[0];
+              if (divElement.offsetWidth > 800) {
+                vizElement.style.minWidth = "420px";
+                vizElement.style.maxWidth = "850px";
+                vizElement.style.width = "100%";
+                vizElement.style.minHeight = "587px";
+                vizElement.style.maxHeight = "860px";
+                vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+              } else if (divElement.offsetWidth > 500) {
+                vizElement.style.minWidth = "420px";
+                vizElement.style.maxWidth = "850px";
+                vizElement.style.width = "100%";
+                vizElement.style.minHeight = "587px";
+                vizElement.style.maxHeight = "860px";
+                vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+              } else {
+                vizElement.style.width = "100%";
+                vizElement.style.height = "727px";
+              }
+              var scriptElement = document.createElement("script");
+              scriptElement.src =
+                "https://public.tableau.com/javascripts/api/viz_v1.js";
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
         <!-- Sección 3: Metodología y origen de los datos -->
-        <section id="metodologia">
+        <section id="metodologia" class=" margin-top-md">
           <h2 class="section-title">Fuentes y Metodología</h2>
           <p>
             Los registros corresponden a las defunciones registradas bajo los
@@ -536,6 +642,7 @@
           </p>
         </section>
 
+        <!-- Sección : Canales de contencion y ayuda -->
         <section id="recursos">
           <h2 class="section-title">Canales de Contención y Ayuda</h2>
           <p>
